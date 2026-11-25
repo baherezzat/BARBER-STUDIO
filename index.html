@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>THE GENTLEMAN — حلاقة رجالية فاخرة | حجز زيارات منزلية وباقات العريس</title>
+<meta name="description" content="صالون حلاقة رجالي فاخر في مصر — احجز موعدك داخل الصالون أو زيارة منزلية أو باقة تجهيز عريس، مع أحدث قصات الشعر العالمية.">
+<meta property="og:title" content="THE GENTLEMAN — BARBER STUDIO">
+<meta property="og:description" content="حلاقة احترافية... في الصالون أو لحد باب بيتك. احجز الآن عبر واتساب.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/images/hero/hero-main.webp">
+<link rel="icon" href="assets/icons/scissors.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Montserrat:wght@400;600;800&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#home" class="brand" data-nav>
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="6" cy="7" r="2.6"/><circle cx="6" cy="17" r="2.6"/><path d="M8.3 8.3 20 19M8.3 15.7 20 5"/></svg>
+      </span>
+      <span class="brand-text"><strong data-i18n="brandName">ذا جنتلمان</strong><small data-i18n="brandSub">BARBER STUDIO</small></span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Main">
+      <a href="#home" data-nav data-i18n="navHome">الرئيسية</a>
+      <a href="#services" data-nav data-i18n="navServices">خدماتنا</a>
+      <a href="#haircuts" data-nav data-i18n="navHaircuts">أحدث القصات</a>
+      <a href="#home-service" data-nav data-i18n="navHomeService">الزيارات المنزلية</a>
+      <a href="#groom" data-nav data-i18n="navGroom">باقات العريس</a>
+      <a href="#gallery" data-nav data-i18n="navGallery">معرض الصور</a>
+      <a href="#about" data-nav data-i18n="navAbout">من نحن</a>
+      <a href="#contact" data-nav data-i18n="navContact">اتصل بنا</a>
+    </nav>
+    <div class="header-actions">
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN</button>
+      <button class="btn btn-gold btn-header" data-open-booking data-i18n="btnBookNow">احجز موعدك الآن</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="nav-drawer" id="navDrawer" aria-hidden="true">
+  <nav class="drawer-links">
+    <a href="#home" data-nav data-i18n="navHome">الرئيسية</a>
+    <a href="#services" data-nav data-i18n="navServices">خدماتنا</a>
+    <a href="#haircuts" data-nav data-i18n="navHaircuts">أحدث القصات</a>
+    <a href="#home-service" data-nav data-i18n="navHomeService">الزيارات المنزلية</a>
+    <a href="#groom" data-nav data-i18n="navGroom">باقات العريس</a>
+    <a href="#gallery" data-nav data-i18n="navGallery">معرض الصور</a>
+    <a href="#about" data-nav data-i18n="navAbout">من نحن</a>
+    <a href="#contact" data-nav data-i18n="navContact">اتصل بنا</a>
+  </nav>
+  <button class="btn btn-gold btn-block" data-open-booking data-i18n="btnBookNow">احجز موعدك الآن</button>
+</div>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero-bg" style="background-image:url('assets/images/hero/hero-main.webp')"></div>
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <p class="hero-eyebrow" data-i18n="heroEyebrow">صالون حلاقة رجالي فاخر — مصر</p>
+    <h1 class="hero-title" data-i18n="heroTitle">حلاقة احترافية... في الصالون أو لحد باب بيتك</h1>
+    <p class="hero-sub" data-i18n="heroSub">استمتع بأحدث قصات الشعر العالمية وخدمات العناية الرجالية، مع إمكانية حجز حلاق محترف يصل إليك في المكان والوقت المناسبين.</p>
+    <div class="hero-cta">
+      <button class="btn btn-gold" data-open-booking data-booking-type="home" data-i18n="btnHomeVisit">احجز زيارة منزلية</button>
+      <button class="btn btn-outline" data-open-booking data-booking-type="salon" data-i18n="btnSalon">احجز داخل الصالون</button>
+      <a href="#groom" class="btn btn-ghost" data-nav data-i18n="btnGroom">اكتشف باقات العريس</a>
+    </div>
+    <ul class="hero-trust">
+      <li data-i18n="trust1">حلاقون محترفون</li>
+      <li data-i18n="trust2">أدوات معقمة</li>
+      <li data-i18n="trust3">مواعيد مرنة</li>
+      <li data-i18n="trust4">خدمة منزلية مميزة</li>
+    </ul>
+  </div>
+  <a href="#services" class="scroll-hint" data-nav aria-label="Scroll down"><span></span></a>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-eyebrow" data-i18n="servicesEyebrow">قائمة الخدمات والأسعار</p>
+      <h2 class="section-title" data-i18n="servicesTitle">خدماتنا</h2>
+      <p class="section-note" data-i18n="servicesNote">الأسعار تجريبية ويمكن تعديلها من ملف الإعدادات.</p>
+    </div>
+    <div class="filter-bar" id="serviceFilters" role="tablist"></div>
+    <div class="services-grid" id="servicesGrid"></div>
+  </div>
+</section>
+
+<!-- ================= HAIRCUTS ================= -->
+<section class="section section-alt" id="haircuts">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-eyebrow" data-i18n="haircutsEyebrow">معرض القصات العالمية</p>
+      <h2 class="section-title" data-i18n="haircutsTitle">أحدث القصات</h2>
+      <p class="section-note" data-i18n="haircutsNote">اختر قصتك المفضلة واحجزها مباشرة.</p>
+    </div>
+    <div class="haircuts-gallery" id="haircutsGallery"></div>
+  </div>
+</section>
+
+<!-- ================= HOME SERVICE ================= -->
+<section class="section" id="home-service">
+  <div class="container home-service-grid">
+    <div class="hs-media">
+      <img src="assets/images/gallery/home-1.webp" alt="خدمة الحلاقة المنزلية" loading="lazy" width="600" height="800" onerror="this.onerror=null;this.src='assets/images/hero/hero-main.webp'">
+    </div>
+    <div class="hs-content">
+      <p class="section-eyebrow" data-i18n="hsEyebrow">الحلاقة المنزلية</p>
+      <h2 class="section-title" data-i18n="hsTitle">صالونك الخاص... في راحة منزلك</h2>
+      <p class="section-desc" data-i18n="hsDesc">احجز حلاقًا محترفًا ليصل إليك في منزلك أو الفندق أو مكان إقامتك، مع جميع الأدوات اللازمة لتقديم تجربة حلاقة وعناية شخصية متميزة.</p>
+      <ol class="hs-steps">
+        <li><span>1</span><p data-i18n="hsStep1">اختر الخدمة المطلوبة</p></li>
+        <li><span>2</span><p data-i18n="hsStep2">حدد المكان والموعد</p></li>
+        <li><span>3</span><p data-i18n="hsStep3">أرسل طلب الحجز</p></li>
+        <li><span>4</span><p data-i18n="hsStep4">انتظر تأكيد الموعد من الصالون</p></li>
+        <li><span>5</span><p data-i18n="hsStep5">استمتع بخدمة الحلاقة في منزلك</p></li>
+      </ol>
+      <ul class="hs-list" id="homeServiceList"></ul>
+      <button class="btn btn-gold btn-lg" data-open-booking data-booking-type="home" data-i18n="hsCta">اطلب حلاقًا لحد باب بيتك</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GROOM PACKAGES ================= -->
+<section class="section section-alt" id="groom">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-eyebrow" data-i18n="groomEyebrow">باقات تجهيز العريس</p>
+      <h2 class="section-title" data-i18n="groomTitle">في أهم يوم في حياتك... خليك في أفضل إطلالة</h2>
+    </div>
+    <div class="groom-grid" id="groomGrid"></div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-eyebrow" data-i18n="galleryEyebrow">أعمالنا</p>
+      <h2 class="section-title" data-i18n="galleryTitle">معرض الصور</h2>
+    </div>
+    <div class="masonry" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section section-alt" id="about">
+  <div class="container about-grid">
+    <div class="about-media">
+      <img src="assets/images/gallery/about-barber.webp" alt="حلاق محترف" loading="lazy" width="900" height="1100" onerror="this.onerror=null;this.src='assets/images/hero/hero-main.webp'">
+    </div>
+    <div class="about-content">
+      <p class="section-eyebrow" data-i18n="aboutEyebrow">من نحن</p>
+      <h2 class="section-title" data-i18n="aboutTitle">الحلاقة تجربة... مش مجرد خدمة</h2>
+      <p class="section-desc" data-i18n="aboutText">نؤمن بأن الحلاقة ليست مجرد خدمة، بل تجربة متكاملة تعكس شخصيتك وأسلوبك. نقدم أحدث قصات الشعر العالمية وخدمات العناية الرجالية بأدوات احترافية، سواء داخل الصالون أو في راحة منزلك.</p>
+      <ul class="about-list">
+        <li data-i18n="about1">الاهتمام بأدق التفاصيل</li>
+        <li data-i18n="about2">النظافة والتعقيم</li>
+        <li data-i18n="about3">أساليب حلاقة عصرية</li>
+        <li data-i18n="about4">خدمات منزلية مرنة</li>
+        <li data-i18n="about5">تجربة مصممة لكل عميل</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section" id="faq">
+  <div class="container container-narrow">
+    <div class="section-head">
+      <p class="section-eyebrow" data-i18n="faqEyebrow">الأسئلة الشائعة</p>
+      <h2 class="section-title" data-i18n="faqTitle">عندك سؤال؟</h2>
+    </div>
+    <div class="accordion" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section section-alt" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-eyebrow" data-i18n="contactEyebrow">تواصل معنا</p>
+      <h2 class="section-title" data-i18n="contactTitle">اتصل بنا</h2>
+    </div>
+    <div class="contact-grid" id="contactGrid"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <strong>THE GENTLEMAN</strong>
+      <p data-i18n="slogan">أناقتك تبدأ من هنا... أينما كنت.</p>
+    </div>
+    <div class="footer-social" id="footerSocial"></div>
+    <p class="footer-copy">© 2026 THE GENTLEMAN — <span data-i18n="footerNote">جميع الحقوق محفوظة</span></p>
+  </div>
+</footer>
+
+<!-- ================= MOBILE BOTTOM BAR ================= -->
+<nav class="mobile-bar" aria-label="Quick actions">
+  <a href="#services" data-nav>
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+    <span data-i18n="barServices">الخدمات</span></a>
+  <a href="#contact" data-nav>
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+    <span data-i18n="barContact">اتصل بنا</span></a>
+  <a id="mobileWhatsApp" target="_blank" rel="noopener" class="mb-wa">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .3-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6c-.1.2-.3.4-.1.7.1.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.5.1.6-.1s.7-.8.9-1c.2-.3.4-.2.6-.1l1.8.9c.3.1.5.2.5.3 0 .1 0 .7-.4 1.3Z"/></svg>
+    <span>WhatsApp</span></a>
+  <button class="mb-book" data-open-booking>
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
+    <span data-i18n="barBook">احجز الآن</span></button>
+</nav>
+
+<!-- ================= BOOKING MODAL ================= -->
+<div class="modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+  <div class="modal-backdrop" data-close-booking></div>
+  <div class="modal-panel">
+    <div class="modal-head">
+      <h3 id="bookingTitle" data-i18n="bkTitle">احجز موعدك</h3>
+      <button class="modal-close" data-close-booking aria-label="Close">&times;</button>
+    </div>
+    <ol class="bk-steps" id="bkSteps"></ol>
+    <div class="bk-body" id="bkBody"></div>
+    <div class="bk-foot" id="bkFoot"></div>
+  </div>
+</div>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lb-close" data-close-lightbox aria-label="Close">&times;</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Previous">&#10094;</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lb-next" id="lbNext" aria-label="Next">&#10095;</button>
+</div>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
