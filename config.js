@@ -83,7 +83,11 @@ const CONFIG = {
       descAr:"حلاق محترف يصل إليك بأدواته كاملة.", descEn:"A professional barber at your door, fully equipped." },
     { id:"homefull",  cat:"home",    price:450, duration:60, home:true,  img:"assets/images/services/home-full.webp",
       nameAr:"حلاقة شعر وذقن منزلية", nameEn:"Home Haircut + Beard",
-      descAr:"زيارة منزلية متكاملة للشعر والذقن.", descEn:"Complete home visit for hair and beard." }
+      descAr:"زيارة منزلية متكاملة للشعر والذقن.", descEn:"Complete home visit for hair and beard." },
+    { id:"homecombo", cat:"home", price:650, duration:90, home:true, img:"assets/images/hero/home-haircut-960.webp",
+      nameAr:"كومبو الجنتلمان المنزلي", nameEn:"The Gentleman Home Combo",
+      descAr:"قص وتصفيف الشعر، وتهذيب الذقن وتحديدها، وفوطة دافئة، وتنظيف وترطيب الوجه.",
+      descEn:"Haircut and styling, beard trim and line-up, warm towel, facial cleanse and moisturizer." }
   ],
 
   /* ---------- أحدث القصات ---------- */

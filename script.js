@@ -464,7 +464,7 @@ function renderBooking() {
           const qty = Booking.services[s.id] || 0;
           return `<div class="bk-svc">
             <img src="${s.img}" alt="${esc(name)}" onerror="this.onerror=null;this.src='assets/images/hero/private-studio.webp'">
-            <div class="bk-svc-info"><strong>${esc(name)}</strong><small>${money(s.price)} · ${s.duration} ${t("minAbbrev")}</small></div>
+            <div class="bk-svc-info"><strong>${esc(name)}</strong>${s.cat === "home" ? `<small style="display:block">${esc(LANG === "ar" ? s.descAr : s.descEn)}</small>` : ""}<small>${money(s.price)} · ${s.duration} ${t("minAbbrev")}</small></div>
             <div class="qty">
               <button data-qty="${s.id}|-1" aria-label="minus">−</button>
               <span>${qty}</span>
