@@ -7,19 +7,19 @@
 /* ---------------- I18N ---------------- */
 const I18N = {
   ar: {
-    dir: "rtl",
+    dir: "rtl", pickService:"اختار الخدمة والموعد",
     brandName: "ذا جنتلمان", brandSub: "BARBER STUDIO",
     navHome:"الرئيسية", navServices:"خدماتنا", navHaircuts:"أحدث القصات",
     navHomeService:"الزيارات المنزلية", navGroom:"باقات العريس",
     navGallery:"معرض الصور", navAbout:"من نحن", navContact:"اتصل بنا",
     btnBookNow:"احجز موعدك الآن",
     heroEyebrow:"صالون حلاقة رجالي فاخر — مصر",
-    heroTitle:"حلاقة احترافية... في الصالون أو لحد باب بيتك",
-    heroSub:"استمتع بأحدث قصات الشعر العالمية وخدمات العناية الرجالية، مع إمكانية حجز حلاق محترف يصل إليك في المكان والوقت المناسبين.",
+    heroTitle:"حلاقة على أصولها",
+    heroSub:"من القصّة الكلاسيكية لتحديد الذقن، اختار إطلالتك واحجز حلاقك في الصالون أو في البيت.",
     btnHomeVisit:"احجز زيارة منزلية", btnSalon:"احجز داخل الصالون", btnGroom:"اكتشف باقات العريس",
     trust1:"حلاقون محترفون", trust2:"أدوات معقمة", trust3:"مواعيد مرنة", trust4:"خدمة منزلية مميزة",
     servicesEyebrow:"قائمة الخدمات والأسعار", servicesTitle:"خدماتنا",
-    servicesNote:"الأسعار تجريبية ويمكن تعديلها من ملف الإعدادات.",
+    servicesNote:"الأسعار استرشادية وتُؤكّد عند الحجز.",
     haircutsEyebrow:"معرض القصات العالمية", haircutsTitle:"أحدث القصات",
     haircutsNote:"اختر قصتك المفضلة واحجزها مباشرة.",
     hsEyebrow:"الحلاقة المنزلية", hsTitle:"صالونك الخاص... في راحة منزلك",
@@ -31,7 +31,7 @@ const I18N = {
     groomEyebrow:"باقات تجهيز العريس", groomTitle:"في أهم يوم في حياتك... خليك في أفضل إطلالة",
     groomFeatured:"الأكثر طلبًا", groomBook:"احجز باقة العريس",
     galleryEyebrow:"أعمالنا", galleryTitle:"معرض الصور",
-    aboutEyebrow:"من نحن", aboutTitle:"الحلاقة تجربة... مش مجرد خدمة",
+    aboutEyebrow:"من نحن", aboutTitle:"على كرسي الجنتلمان",
     aboutText:"نؤمن بأن الحلاقة ليست مجرد خدمة، بل تجربة متكاملة تعكس شخصيتك وأسلوبك. نقدم أحدث قصات الشعر العالمية وخدمات العناية الرجالية بأدوات احترافية، سواء داخل الصالون أو في راحة منزلك.",
     about1:"الاهتمام بأدق التفاصيل", about2:"النظافة والتعقيم", about3:"أساليب حلاقة عصرية",
     about4:"خدمات منزلية مرنة", about5:"تجربة مصممة لكل عميل",
@@ -42,7 +42,7 @@ const I18N = {
     filterAll:"جميع الخدمات", filterHair:"قصات الشعر", filterBeard:"الذقن",
     filterSkin:"العناية بالبشرة", filterHaircare:"العناية بالشعر",
     filterHome:"الزيارات المنزلية", filterGroom:"باقات العريس",
-    addToBooking:"أضِف للحجز", added:"تمت الإضافة ✓", minAbbrev:"دقيقة",
+    addToBooking:"أضف للحجز", added:"تمت الإضافة ✓", minAbbrev:"دقيقة",
     duration:"المدة", price:"السعر",
     bookThisCut:"احجز هذه القصة",
     contactLabels:{ phone:"رقم الهاتف", whatsapp:"واتساب", address:"العنوان", hours:"مواعيد العمل", areas:"مناطق التغطية المنزلية", follow:"تابعنا", maps:"موقعنا على الخرائط", call:"اتصل الآن" },
@@ -77,19 +77,19 @@ const I18N = {
     perPerson:"للشخص الواحد", egp:"ج.م"
   },
   en: {
-    dir: "ltr",
+    dir: "ltr", pickService:"Choose service & time",
     brandName: "THE GENTLEMAN", brandSub: "BARBER STUDIO",
     navHome:"Home", navServices:"Services", navHaircuts:"Trending Cuts",
     navHomeService:"Home Visits", navGroom:"Groom Packages",
     navGallery:"Gallery", navAbout:"About", navContact:"Contact",
     btnBookNow:"Book Now",
     heroEyebrow:"Premium Men's Barber Studio — Egypt",
-    heroTitle:"Professional grooming... at the salon or at your doorstep",
-    heroSub:"Enjoy the world's latest haircuts and men's grooming services, with a professional barber at the place and time that suits you.",
+    heroTitle:"The art of a good cut",
+    heroSub:"From a scissor cut to a straight-razor finish, book your barber in the studio or at home.",
     btnHomeVisit:"Book a Home Visit", btnSalon:"Book at the Salon", btnGroom:"Explore Groom Packages",
     trust1:"Professional barbers", trust2:"Sterilized tools", trust3:"Flexible timings", trust4:"Premium home service",
     servicesEyebrow:"Services & Pricing", servicesTitle:"Our Services",
-    servicesNote:"Prices are demo values — fully editable in the settings file.",
+    servicesNote:"Prices are indicative and confirmed when booking.",
     haircutsEyebrow:"World's Trending Gallery", haircutsTitle:"Trending Haircuts",
     haircutsNote:"Pick your favorite cut and book it instantly.",
     hsEyebrow:"Home Barber Service", hsTitle:"Your private salon... in the comfort of your home",
@@ -101,7 +101,7 @@ const I18N = {
     groomEyebrow:"Groom Packages", groomTitle:"On the biggest day of your life... look your absolute best",
     groomFeatured:"Most Popular", groomBook:"Book This Package",
     galleryEyebrow:"Our Work", galleryTitle:"Gallery",
-    aboutEyebrow:"About Us", aboutTitle:"A haircut is an experience... not just a service",
+    aboutEyebrow:"About Us", aboutTitle:"In the barber chair",
     aboutText:"We believe a haircut is a complete experience that reflects your personality and style. We offer the world's latest cuts and men's grooming with professional tools — at the salon or in your home.",
     about1:"Attention to the finest details", about2:"Cleanliness & sterilization", about3:"Modern barbering techniques",
     about4:"Flexible home services", about5:"An experience tailored to every client",
@@ -236,7 +236,7 @@ function renderServices() {
     const desc = LANG==="ar" ? s.descAr : s.descEn;
     const qty = Booking.services[s.id] || 0;
     return `<article class="service-card">
-      <figure><img src="${s.img}" alt="${esc(name)}" loading="lazy" width="600" height="450" onerror="this.onerror=null;this.src='assets/images/hero/hero-main.webp'"></figure>
+      <figure><img src="${s.img}" alt="${esc(name)}" loading="lazy" width="600" height="450" onerror="this.onerror=null;this.src='assets/images/hero/private-studio.webp'"></figure>
       <div class="service-body">
         <h3 class="service-name">${esc(name)}</h3>
         <p class="service-desc">${esc(desc)}</p>
@@ -256,9 +256,9 @@ function renderHaircuts() {
     const name = LANG==="ar" ? h.nameAr : h.nameEn;
     const desc = LANG==="ar" ? h.descAr : h.descEn;
     return `<figure class="haircut-item">
-      <img src="assets/images/haircuts/${h.slug}.webp" alt="${esc(name)} — ${esc(h.nameEn)}" loading="lazy" onerror="this.onerror=null;this.src='assets/images/hero/hero-main.webp'">
+      <img src="assets/images/haircuts/${h.slug}.webp" alt="${esc(name)} — ${esc(h.nameEn)}" loading="lazy" onerror="this.onerror=null;this.src='assets/images/hero/private-studio.webp'">
       <figcaption class="haircut-info">
-        <h3>${esc(name)} <small style="color:var(--gold);font-size:.72rem">/ ${esc(h.nameEn)}</small></h3>
+        <h3>${esc(name)}${LANG==="ar" ? ` <small lang="en" dir="ltr">${esc(h.nameEn)}</small>` : ""}</h3>
         <p>${esc(desc)}</p>
         <button class="haircut-book" data-book-cut="${h.slug}">${t("bookThisCut")}</button>
       </figcaption>
@@ -273,7 +273,7 @@ function renderGroom() {
     const items = LANG==="ar" ? p.itemsAr : p.itemsEn;
     return `<article class="groom-card ${p.featured?"featured":""}">
       ${p.featured ? `<span class="groom-badge">${t("groomFeatured")}</span>` : ""}
-      <figure><img src="${p.img}" alt="${esc(name)}" loading="lazy" width="700" height="900" onerror="this.onerror=null;this.src='assets/images/hero/hero-main.webp'"></figure>
+      <figure><img src="${p.img}" alt="${esc(name)}" loading="lazy" width="700" height="900" onerror="this.onerror=null;this.src='assets/images/hero/private-studio.webp'"></figure>
       <div class="groom-body">
         <h3 class="groom-name">${esc(name)}</h3>
         <p class="groom-price">${money(p.price)} <small>${t("perPerson")}</small></p>
@@ -289,7 +289,7 @@ let lbIndex = 0;
 function renderGallery() {
   document.getElementById("galleryGrid").innerHTML = CONFIG.gallery.map((g,i) =>
     `<figure class="masonry-item" data-lb="${i}" tabindex="0" role="button" aria-label="${esc(LANG==="ar"?g.ar:g.en)}">
-      <img src="${g.img}" alt="${esc(LANG==="ar"?g.ar:g.en)}" loading="lazy" onerror="this.onerror=null;this.src='assets/images/hero/hero-main.webp'">
+      <img src="${g.img}" alt="${esc(LANG==="ar"?g.ar:g.en)}" loading="lazy" onerror="this.onerror=null;this.src='assets/images/hero/private-studio.webp'">
       <figcaption>${esc(LANG==="ar"?g.ar:g.en)}</figcaption>
     </figure>`).join("");
 }
@@ -299,7 +299,7 @@ function openLightbox(i) {
   const img = document.getElementById("lightboxImg");
   img.src = item.img;
   img.alt = LANG==="ar" ? item.ar : item.en;
-  img.onerror = () => { img.onerror=null; img.src="assets/images/hero/hero-main.webp"; };
+  img.onerror = () => { img.onerror=null; img.src="assets/images/hero/private-studio.webp"; };
   document.getElementById("lightbox").classList.add("open");
   document.getElementById("lightbox").setAttribute("aria-hidden","false");
   document.body.style.overflow = "hidden";
@@ -357,7 +357,6 @@ function renderContact() {
     `<a href="${s.url}" target="_blank" rel="noopener" aria-label="${s.label}">${s.svg}</a>`).join("");
 
   document.getElementById("mobileWhatsApp").href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(LANG==="ar"?"مرحبًا، أرغب في الاستفسار عن حجز موعد.":"Hello, I'd like to ask about booking an appointment.")}`;
-  document.getElementById("homeServiceList").innerHTML = I18N[LANG].hsList.map(x=>`<li>${esc(x)}</li>`).join("");
 }
 
 /* ================= BOOKING MODAL ================= */
@@ -431,7 +430,7 @@ function renderBooking() {
       html += CONFIG.groomPackages.map(p => {
         const name = LANG==="ar" ? p.nameAr : p.nameEn;
         return `<div class="bk-svc">
-          <img src="${p.img}" alt="${esc(name)}" onerror="this.onerror=null;this.src='assets/images/hero/hero-main.webp'">
+          <img src="${p.img}" alt="${esc(name)}" onerror="this.onerror=null;this.src='assets/images/hero/private-studio.webp'">
           <div class="bk-svc-info"><strong>${esc(name)}</strong><small>${money(p.price)} ${t("perPerson")}</small></div>
           <label style="display:flex;align-items:center;gap:.4rem;font-size:.85rem">
             <input type="radio" name="groompkg" value="${p.id}" ${Booking.groomPackage===p.id?"checked":""}> ${esc(t("groomBook"))}
@@ -445,7 +444,7 @@ function renderBooking() {
           const name = LANG==="ar" ? s.nameAr : s.nameEn;
           const qty = Booking.services[s.id] || 0;
           return `<div class="bk-svc">
-            <img src="${s.img}" alt="${esc(name)}" onerror="this.onerror=null;this.src='assets/images/hero/hero-main.webp'">
+            <img src="${s.img}" alt="${esc(name)}" onerror="this.onerror=null;this.src='assets/images/hero/private-studio.webp'">
             <div class="bk-svc-info"><strong>${esc(name)}</strong><small>${money(s.price)} · ${s.duration} ${t("minAbbrev")}</small></div>
             <div class="qty">
               <button data-qty="${s.id}|-1" aria-label="minus">−</button>
@@ -645,7 +644,16 @@ function buildWaMessage() {
 document.addEventListener("click", (e) => {
   const q = (sel) => e.target.closest(sel);
 
+  const mode = q("[data-mode-choice]");
+  if (mode) {
+    const entry = mode.closest(".booking-entry");
+    entry.dataset.mode = mode.dataset.modeChoice;
+    entry.querySelector(".session-book").dataset.bookingType = entry.dataset.mode;
+    entry.querySelectorAll("[data-mode-choice]").forEach(b => b.setAttribute("aria-pressed", String(b === mode)));
+    return;
+  }
   if (q("[data-nav]")) {
+    revealPanel(q("[data-nav]").hash);
     document.getElementById("navDrawer").classList.remove("open");
     document.getElementById("hamburger").classList.remove("open");
     document.body.style.overflow = "";
@@ -653,7 +661,8 @@ document.addEventListener("click", (e) => {
   }
   if (q("[data-open-booking]")) {
     const btn = q("[data-open-booking]");
-    openBooking({ type: btn.dataset.bookingType || null });
+    if (btn.dataset.bookingType && Booking.type !== btn.dataset.bookingType) resetBooking();
+    openBooking({ type: btn.dataset.bookingType || null, step: btn.dataset.bookingType ? 2 : 1 });
     return;
   }
   if (q("[data-close-booking]")) { closeBooking(); return; }
@@ -797,8 +806,8 @@ function applyI18n() {
     const v = I18N[LANG][el.dataset.i18n];
     if (typeof v === "string") el.textContent = v;
   });
-  renderFilters(); renderServices(); renderHaircuts(); renderGroom();
-  renderGallery(); renderFaq(); renderContact();
+  renderFilters(); renderServices(); renderHaircuts();
+  renderContact();
   if (modal.classList.contains("open")) renderBooking();
 }
 document.getElementById("langToggle").addEventListener("click", () => {
@@ -809,3 +818,10 @@ document.getElementById("langToggle").addEventListener("click", () => {
 
 /* ---------- init ---------- */
 applyI18n();
+
+function revealPanel(hash) {
+  const panel = document.getElementById((hash || "").slice(1));
+  if (panel && panel.matches("details.compact-panel")) panel.open = true;
+}
+window.addEventListener("hashchange", () => revealPanel(location.hash));
+revealPanel(location.hash);
