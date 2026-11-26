@@ -75,3 +75,13 @@ html[dir="rtl"] .session-copy{direction:rtl}
 .compact-panel summary::-webkit-details-marker{display:none}.compact-panel summary::after{content:'+';font:1.6rem Georgia}.compact-panel[open] summary::after{content:'−'}
 .panel-content{padding:.6rem 0 2rem}.site-footer{padding:1.3rem 0}.footer-brand,.footer-social:empty{display:none}
 @media(max-width:740px){.booking-entry{grid-template-columns:1fr}.session-photo{min-height:0;height:auto;aspect-ratio:1.6}.session-copy{gap:.8rem;padding:1.35rem 5vw 1.65rem}.session-copy h1{font-size:2.1rem}.session-brand{font-size:1.55rem}.session-book{width:100%}.session-modes button{padding:.45rem .74rem}.compact-menu{padding-top:.65rem}}
+/* Keep the entire room and both wedding portraits in frame. */
+.booking-entry .session-photo img{object-fit:contain;object-position:center}
+.session-photo{background:#211b19}
+.modal-panel{height:min(48rem,92dvh);max-height:92dvh;overflow:hidden}
+.modal-head,.bk-steps,.bk-foot{flex:none}
+.bk-body{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain}
+.bk-foot{background:#261e1a;border-top:1px solid #907b65;box-shadow:0 -4px 16px #0003;padding-bottom:max(1rem,env(safe-area-inset-bottom))}
+.bk-foot [data-bk-next],.bk-foot [data-bk-send]{min-height:48px;min-width:45%;background:#f0d5a8;color:#271b14;font-weight:800}
+@media(max-width:768px){.modal-panel{height:100dvh;max-height:100dvh}.bk-foot{padding-inline:1rem}}
+@media(max-height:450px){.modal-head,.bk-steps,.bk-foot{padding-block:.3rem}.modal-panel{height:100dvh;max-height:100dvh}}

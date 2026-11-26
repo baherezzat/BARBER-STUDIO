@@ -409,6 +409,8 @@ function renderBooking() {
   renderStepsBar();
   const body = document.getElementById("bkBody");
   const foot = document.getElementById("bkFoot");
+  if (body.dataset.step !== String(Booking.step)) body.scrollTop = 0;
+  body.dataset.step = String(Booking.step);
   const err = `<p class="bk-error" id="bkErr"></p>`;
 
   /* ---- STEP 1: type ---- */
@@ -641,17 +643,17 @@ function buildWaMessage() {
 }
 
 /* ================= EVENT DELEGATION ================= */
-// Real barbershop photographs by Redd Francisco, Chaps & Co and Barney Goodman (Unsplash).
-const bookingPhotoIds = {
-  salon: "1702865272115-5afdbae975af",
-  home: "1759134248487-e8baaf31e33e",
-  groom: "1781455793310-8427c96454c7"
-};
+// Salon interior photographed by František Čaník in Bratislava (Unsplash).
 function showBookingPhoto(mode) {
   const photo = document.getElementById("bookingPhoto");
-  const url = width => `https://images.unsplash.com/photo-${bookingPhotoIds[mode]}?w=${width}&fit=max&q=85&fm=webp`;
-  photo.srcset = [768, 1440, 2400, 3840].map(width => `${url(width)} ${width}w`).join(", ");
-  photo.src = url(1440);
+  const salon = mode === "salon";
+  const scene = mode === "groom" ? "wedding-prep" : "home-haircut";
+  const widths = salon ? [768, 1440, 2400, 3840] : [960, 3840];
+  const url = width => salon
+    ? `https://images.unsplash.com/photo-1672257493461-704902362c1d?w=${width}&fit=max&q=85&fm=webp`
+    : `assets/images/hero/${scene}-${width}.webp`;
+  photo.srcset = widths.map(width => `${url(width)} ${width}w`).join(", ");
+  photo.src = url(salon ? 1440 : 960);
 }
 
 document.addEventListener("click", (e) => {
