@@ -106,3 +106,41 @@ html[dir="rtl"] .session-copy{direction:rtl}
   top: 50%;
   transform: translateY(-50%);
 }
+
+/* Pair each haircut portrait with its booking details. */
+#haircuts .haircuts-gallery {
+  max-width: 82rem;
+  margin-inline: auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 1.75rem;
+}
+#haircuts .haircut-item {
+  display: grid;
+  grid-template-columns: clamp(6rem, 8vw, 7.5rem) minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
+  padding-block: 1rem;
+  border-top: 1px solid #705848;
+  background: transparent;
+  cursor: auto;
+}
+#haircuts .haircut-item img {
+  display: block;
+  aspect-ratio: 1;
+  height: auto;
+  border: 1px solid #79604d;
+}
+#haircuts .haircut-info {
+  padding: 0;
+  text-align: start;
+}
+#haircuts .haircut-info small { margin-block-start: .2rem; }
+#haircuts .haircut-info p { margin: .35rem 0 .15rem; line-height: 1.55; }
+#haircuts .haircut-book { min-height: 2.75rem; }
+@media (max-width: 1100px) {
+  #haircuts .haircuts-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 650px) {
+  #haircuts .haircuts-gallery { grid-template-columns: minmax(0, 1fr); }
+  #haircuts .haircut-item { grid-template-columns: 5.75rem minmax(0, 1fr); }
+}
