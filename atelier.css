@@ -154,5 +154,4 @@ html[dir="rtl"] .session-copy{direction:rtl}
 }
 
 .booking-entry{position:relative}
-.scene-playback{position:absolute;bottom:.75rem;left:.75rem;width:44px;height:44px;border-radius:50%;background:#201b19dc;color:#fff7eb;border:1px solid #dfbd89;cursor:pointer;font-size:1rem}
-@media(max-width:740px){.scene-playback{bottom:auto;top:calc(var(--header-h) + .65rem)}}
+.scene-shadow{position:absolute;inset:0 -35%;pointer-events:none;background:linear-gradient(109deg,transparent 25%,rgba(32,18,12,.7) 52%,transparent 76%)}

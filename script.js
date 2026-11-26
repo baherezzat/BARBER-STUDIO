@@ -678,10 +678,23 @@ async function showBookingPhoto(mode) {
   current.removeAttribute("id");
   current.after(next);
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) { current.remove(); return; }
+  const timing = {duration:760, easing:"cubic-bezier(.32,0,.18,1)"};
+  current.animate([
+    {filter:"brightness(1)"}, {filter:"brightness(.48)", offset:.5}, {filter:"brightness(.6)"}
+  ], timing);
   const animation = next.animate([
-    {opacity:0, transform:"translateX(-0.8%) scale(1.045)"},
-    {opacity:1, transform:"translateX(0) scale(1)"}
-  ], {duration:250, easing:"cubic-bezier(.2,.75,.3,1)"});
+    {opacity:0, filter:"brightness(.6)", transform:"scale(1.045) translateX(.8%)"},
+    {opacity:.32, offset:.35},
+    {opacity:1, filter:"brightness(1)", transform:"scale(1) translateX(0)"}
+  ], timing);
+  const shade = document.createElement("span");
+  shade.className = "scene-shadow";
+  current.parentElement.append(shade);
+  shade.animate([
+    {opacity:0, transform:"translateX(-65%)"},
+    {opacity:.65, offset:.42},
+    {opacity:0, transform:"translateX(65%)"}
+  ], timing).finished.then(() => shade.remove());
   animation.finished.then(() => current.remove());
 }
 
@@ -691,24 +704,8 @@ for (const button of document.querySelectorAll(".session-modes button")) {
 }
 
 const hero = document.querySelector(".booking-entry");
-const motionPreference = matchMedia("(prefers-reduced-motion: reduce)");
-const playback = document.createElement("button");
-playback.className = "scene-playback";
-playback.type = "button";
-hero.append(playback);
-let paused = motionPreference.matches;
-function updatePlayback() {
-  playback.textContent = paused ? "▶" : "Ⅱ";
-  playback.setAttribute("aria-label", paused
-    ? (LANG === "ar" ? "تشغيل صور الواجهة" : "Play slideshow")
-    : (LANG === "ar" ? "إيقاف صور الواجهة مؤقتًا" : "Pause slideshow"));
-}
-playback.addEventListener("click", () => { paused = !paused; updatePlayback(); });
-motionPreference.addEventListener("change", () => { paused = motionPreference.matches; updatePlayback(); });
-const modeButtons = [...hero.querySelectorAll(".session-modes button")];
 setInterval(() => {
-  if (paused || document.hidden || modal.classList.contains("open") ||
-      hero.getBoundingClientRect().bottom <= 0 || modeButtons.some(b => b.matches(":hover, :focus-visible"))) return;
+  if (document.hidden || modal.classList.contains("open") || hero.getBoundingClientRect().bottom <= 0) return;
   const modes = Object.keys(bookingScenes);
   showBookingPhoto(modes[(modes.indexOf(hero.dataset.mode) + 1) % modes.length]);
 }, 3000);
@@ -865,7 +862,6 @@ window.addEventListener("scroll", () => {
 
 /* ---------- language ---------- */
 function applyI18n() {
-  updatePlayback();
   document.documentElement.lang = LANG;
   document.documentElement.dir = I18N[LANG].dir;
   document.getElementById("langToggle").textContent = LANG === "ar" ? "EN" : "ع";
@@ -895,14 +891,12 @@ function revealPanel(hash) {
   if (panel && panel.matches("details.compact-panel")) panel.open = true;
 }
 window.addEventListener("hashchange", () => revealPanel(location.hash));
-if (!location.hash || location.hash === "#services" || location.hash === "#home") {
-  if (location.hash === "#services") history.replaceState(history.state, "", location.pathname + location.search);
-  history.scrollRestoration = "manual";
-  document.getElementById("services").open = false;
+function startAtHero() {
+  document.querySelectorAll(".compact-panel[open]").forEach(panel => { panel.open = false; });
   window.scrollTo({top:0, behavior:"instant"});
-  window.addEventListener("pageshow", e => {
-    if (!e.persisted && !location.hash) window.scrollTo({top:0, behavior:"instant"});
-  }, {once:true});
-} else {
-  revealPanel(location.hash);
 }
+startAtHero();
+window.addEventListener("pageshow", event => {
+  if (event.persisted && location.hash) history.replaceState(history.state, "", location.pathname + location.search);
+  if (!location.hash) startAtHero();
+});
