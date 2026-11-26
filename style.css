@@ -82,11 +82,20 @@ button{font-family:inherit;cursor:pointer}
 
 /* ---------- Hero ---------- */
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.05);animation:heroDrift 22s ease-in-out infinite alternate}
-@keyframes heroDrift{from{transform:scale(1.05) translateX(0)}to{transform:scale(1.1) translateX(-2%)}}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(16,16,16,.96) 15%,rgba(16,16,16,.72) 55%,rgba(16,16,16,.45))}
-html[dir="ltr"] .hero-overlay{background:linear-gradient(255deg,rgba(16,16,16,.96) 15%,rgba(16,16,16,.72) 55%,rgba(16,16,16,.45))}
-.hero-content{position:relative;z-index:2;padding:7rem 0 5rem;max-width:760px}
+.hero-bg{position:absolute;inset:0;background:#362619 url("assets/images/hero/salon-interior.webp") center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(270deg,rgba(13,10,8,.93),rgba(13,10,8,.74) 36%,rgba(13,10,8,.13) 72%,transparent)}
+html[dir="ltr"] .hero-bg{transform:scaleX(-1)}
+html[dir="ltr"] .hero-overlay{transform:scaleX(-1)}
+.hero-content{position:relative;z-index:2;padding:8rem 0 5rem;max-width:44rem;margin-inline-start:max(4%,calc((100% - 1200px)/2));margin-inline-end:auto}
+.hero .hero-sub{color:#f2eae0}
+.hero .hero-eyebrow,.hero .btn-ghost{color:#f3ce91}
+.hero .btn-outline{background:rgba(18,13,10,.65)}
+@media(max-width:760px){
+  .hero{align-items:flex-end}
+  .hero-bg{background-position:24% center}
+  .hero .hero-overlay{background:linear-gradient(0deg,rgba(13,10,8,.97) 3%,rgba(13,10,8,.83) 54%,rgba(13,10,8,.56) 75%,rgba(13,10,8,.08))}
+  .hero-content{padding-top:clamp(11rem,29svh,17rem);padding-bottom:5rem}
+}
 .hero-eyebrow{color:var(--gold);letter-spacing:3px;font-size:.85rem;margin-bottom:1rem;text-transform:uppercase}
 .hero-title{font-size:clamp(2rem,5.2vw,3.6rem);font-weight:900;line-height:1.25;margin-bottom:1.2rem}
 .hero-sub{color:var(--gray);font-size:1.1rem;max-width:580px;margin-bottom:2rem}
