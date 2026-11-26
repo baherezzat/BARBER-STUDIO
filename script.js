@@ -315,11 +315,12 @@ function stepLightbox(d) {
 
 /* ---------------- RENDER: FAQ ---------------- */
 function renderFaq() {
-  document.getElementById("faqList").innerHTML = CONFIG.faq.map((f,i) =>
-    `<div class="acc-item ${i%2?"alt":""}">
-      <button class="acc-btn" aria-expanded="false">${esc(LANG==="ar"?f.qAr:f.qEn)}</button>
-      <div class="acc-panel"><p>${esc(LANG==="ar"?f.aAr:f.aEn)}</p></div>
-    </div>`).join("");
+  const arabic = LANG === "ar";
+  document.getElementById("faqList").innerHTML = CONFIG.faq.map(f => `
+    <details class="faq-question" name="booking-questions">
+      <summary>${esc(arabic ? f.qAr : f.qEn)}</summary>
+      <p>${esc(arabic ? f.aAr : f.aEn)}</p>
+    </details>`).join("");
 }
 
 /* ---------------- RENDER: CONTACT ---------------- */
@@ -643,17 +644,13 @@ function buildWaMessage() {
 }
 
 /* ================= EVENT DELEGATION ================= */
-// Salon interior photographed by František Čaník in Bratislava (Unsplash).
+const bookingScenes = { salon: "salon-atelier", home: "home-haircut", groom: "wedding-prep" };
+
 function showBookingPhoto(mode) {
   const photo = document.getElementById("bookingPhoto");
-  const salon = mode === "salon";
-  const scene = mode === "groom" ? "wedding-prep" : "home-haircut";
-  const widths = salon ? [768, 1440, 2400, 3840] : [960, 3840];
-  const url = width => salon
-    ? `https://images.unsplash.com/photo-1672257493461-704902362c1d?w=${width}&fit=max&q=85&fm=webp`
-    : `assets/images/hero/${scene}-${width}.webp`;
-  photo.srcset = widths.map(width => `${url(width)} ${width}w`).join(", ");
-  photo.src = url(salon ? 1440 : 960);
+  const url = width => `assets/images/hero/${bookingScenes[mode]}-${width}.webp`;
+  photo.srcset = [960, 3840].map(width => `${url(width)} ${width}w`).join(", ");
+  photo.src = url(960);
 }
 
 document.addEventListener("click", (e) => {
@@ -824,6 +821,7 @@ function applyI18n() {
   });
   renderFilters(); renderServices(); renderHaircuts();
   renderContact();
+  renderFaq();
   if (modal.classList.contains("open")) renderBooking();
 }
 document.getElementById("langToggle").addEventListener("click", () => {

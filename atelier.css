@@ -75,8 +75,15 @@ html[dir="rtl"] .session-copy{direction:rtl}
 .compact-panel summary::-webkit-details-marker{display:none}.compact-panel summary::after{content:'+';font:1.6rem Georgia}.compact-panel[open] summary::after{content:'−'}
 .panel-content{padding:.6rem 0 2rem}.site-footer{padding:1.3rem 0}.footer-brand,.footer-social:empty{display:none}
 @media(max-width:740px){.booking-entry{grid-template-columns:1fr}.session-photo{min-height:0;height:auto;aspect-ratio:1.6}.session-copy{gap:.8rem;padding:1.35rem 5vw 1.65rem}.session-copy h1{font-size:2.1rem}.session-brand{font-size:1.55rem}.session-book{width:100%}.session-modes button{padding:.45rem .74rem}.compact-menu{padding-top:.65rem}}
-/* Keep the entire room and both wedding portraits in frame. */
-.booking-entry .session-photo img{object-fit:contain;object-position:center}
+/* Keep each booking image edge-to-edge within a landscape frame. */
+.booking-entry .session-photo img{object-fit:cover;object-position:center}
+.booking-entry .session-photo{min-height:0;aspect-ratio:16/9}
+@media(min-width:741px){.session-copy{padding-block:clamp(1.4rem,3vw,4rem);gap:clamp(.75rem,1.5vw,1.5rem)}}
+#booking-faq{background:#efe6d9;color:#342720}
+.faq-question{border-top:1px solid #ccbcab}
+.faq-question summary{font-size:1rem;line-height:1.55;padding:.85rem 0;gap:1rem}
+.faq-question[open]>summary::after{content:'−'}
+.faq-question p{max-width:70ch;padding:0 0 1rem;color:#59483c;line-height:1.85}
 .session-photo{background:#211b19}
 .modal-panel{height:min(48rem,92dvh);max-height:92dvh;overflow:hidden}
 .modal-head,.bk-steps,.bk-foot{flex:none}
