@@ -144,3 +144,10 @@ html[dir="rtl"] .session-copy{direction:rtl}
   #haircuts .haircuts-gallery { grid-template-columns: minmax(0, 1fr); }
   #haircuts .haircut-item { grid-template-columns: 5.75rem minmax(0, 1fr); }
 }
+
+.booking-scene{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;color:var(--gold)}
+.booking-scene img{width:clamp(6rem,22vw,9rem);aspect-ratio:16/9;object-fit:cover}
+@media(prefers-reduced-motion:no-preference){
+  .booking-scene img{animation:booking-scene-in .32s ease-out}
+  @keyframes booking-scene-in{from{opacity:.3;transform:translateY(3px)}to{opacity:1;transform:none}}
+}

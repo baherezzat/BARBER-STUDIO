@@ -227,9 +227,7 @@ function renderFilters() {
 
 function renderServices() {
   const grid = document.getElementById("servicesGrid");
-  const list = CONFIG.services.filter(s => activeFilter==="all" ? true
-    : activeFilter==="home" ? s.home
-    : s.cat===activeFilter);
+  const list = CONFIG.services.filter(s => activeFilter==="all" || s.cat===activeFilter);
   if (!list.length) { grid.innerHTML = `<p style="color:var(--gray);text-align:center;grid-column:1/-1">${t("emptyServices")}</p>`; return; }
   grid.innerHTML = list.map(s => {
     const name = LANG==="ar" ? s.nameAr : s.nameEn;
@@ -363,8 +361,24 @@ function renderContact() {
 /* ================= BOOKING MODAL ================= */
 const modal = document.getElementById("bookingModal");
 
+function availableForType(service, type) {
+  if (type === "group") return service.home;
+  return type === "home" ? service.cat === "home" : type === "salon" && service.cat !== "home";
+}
+
+function chooseBookingType(type) {
+  if (Booking.type === type) return;
+  Booking.type = type;
+  Booking.groomPackage = null;
+  Booking.cutNote = null;
+  for (const id of Object.keys(Booking.services)) {
+    if (!availableForType(getService(id), type)) delete Booking.services[id];
+  }
+  renderServices();
+}
+
 function openBooking(opts = {}) {
-  if (opts.type) Booking.type = opts.type;
+  if (opts.type || opts.groomId) chooseBookingType(opts.groomId ? "groom" : opts.type);
   if (opts.serviceId) { Booking.services = { [opts.serviceId]: 1 }; }
   if (opts.cutSlug) {
     const s = getService("fade");
@@ -429,6 +443,8 @@ function renderBooking() {
   /* ---- STEP 2: services ---- */
   if (Booking.step === 2) {
     let html = `<p style="font-size:.9rem;color:var(--gray);margin-bottom:.8rem">${t("chooseServices")}</p>`;
+    const scene = bookingScenes[Booking.type];
+    if (scene) html = `<div class="booking-scene"><img alt="" src="assets/images/hero/${scene}-960.webp"><strong>${esc(t({salon:"typeSalon",home:"typeHome",groom:"typeGroom"}[Booking.type]))}</strong></div>` + html;
     if (Booking.type === "groom") {
       html += CONFIG.groomPackages.map(p => {
         const name = LANG==="ar" ? p.nameAr : p.nameEn;
@@ -442,7 +458,7 @@ function renderBooking() {
       }).join("");
     } else {
       html += CONFIG.services
-        .filter(s => Booking.type==="home" || Booking.type==="group" ? true : true)
+        .filter(s => availableForType(s, Booking.type))
         .map(s => {
           const name = LANG==="ar" ? s.nameAr : s.nameEn;
           const qty = Booking.services[s.id] || 0;
@@ -646,11 +662,30 @@ function buildWaMessage() {
 /* ================= EVENT DELEGATION ================= */
 const bookingScenes = { salon: "salon-atelier", home: "home-haircut", groom: "wedding-prep" };
 
-function showBookingPhoto(mode) {
-  const photo = document.getElementById("bookingPhoto");
+let sceneRequest = 0;
+async function showBookingPhoto(mode) {
+  const entry = document.querySelector(".booking-entry");
+  const request = ++sceneRequest;
+  if (entry.dataset.mode === mode) return;
+  const current = document.getElementById("bookingPhoto");
+  const next = current.cloneNode(false);
   const url = width => `assets/images/hero/${bookingScenes[mode]}-${width}.webp`;
-  photo.srcset = [960, 3840].map(width => `${url(width)} ${width}w`).join(", ");
-  photo.src = url(960);
+  next.srcset = [960, 3840].map(width => `${url(width)} ${width}w`).join(", ");
+  next.src = url(960);
+  try { await next.decode(); } catch { return; }
+  if (request !== sceneRequest) return;
+  entry.dataset.mode = mode;
+  current.removeAttribute("id");
+  current.after(next);
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) { current.remove(); return; }
+  const animation = next.animate([{opacity:0,transform:"scale(1.025)"},{opacity:1,transform:"scale(1)"}],
+    {duration:360,easing:"ease-out"});
+  animation.finished.then(() => current.remove());
+}
+
+for (const button of document.querySelectorAll(".session-modes button")) {
+  button.addEventListener("pointerenter", () => showBookingPhoto(button.dataset.bookingType));
+  button.addEventListener("focus", () => showBookingPhoto(button.dataset.bookingType));
 }
 
 document.addEventListener("click", (e) => {
@@ -667,10 +702,8 @@ document.addEventListener("click", (e) => {
     const btn = q("[data-open-booking]");
     const entry = btn.closest(".booking-entry");
     if (entry && btn.dataset.bookingType) {
-      entry.dataset.mode = btn.dataset.bookingType;
-      showBookingPhoto(entry.dataset.mode);
+      showBookingPhoto(btn.dataset.bookingType);
     }
-    if (btn.dataset.bookingType && Booking.type !== btn.dataset.bookingType) resetBooking();
     openBooking({ type: btn.dataset.bookingType || null, step: btn.dataset.bookingType ? 2 : 1 });
     return;
   }
@@ -686,7 +719,9 @@ document.addEventListener("click", (e) => {
   }
   if (q("[data-add-service]")) {
     const id = q("[data-add-service]").dataset.addService;
+    chooseBookingType(getService(id).cat === "home" ? "home" : "salon");
     Booking.services[id] = (Booking.services[id]||0) + 1;
+    openBooking({step:2});
     renderServices();
     return;
   }
@@ -711,7 +746,7 @@ document.addEventListener("click", (e) => {
 
   const bkType = q("[data-bk-type]");
   if (bkType) {
-    Booking.type = bkType.dataset.bkType;
+    chooseBookingType(bkType.dataset.bkType);
     Booking.step = 1;
     document.querySelectorAll(".bk-type").forEach(b=>b.classList.toggle("selected", b===bkType));
     setErr("");

@@ -69,9 +69,12 @@ const CONFIG = {
     { id:"mask",      cat:"skin",    price:150, duration:25, home:true,  img:"assets/images/services/face-mask.webp",
       nameAr:"ماسك وترطيب الوجه", nameEn:"Face Mask & Moisture",
       descAr:"ترطيب وماسك ينعش ملامحك.", descEn:"Mask and moisture to refresh your look." },
-    { id:"haircare",  cat:"hair",    price:350, duration:45, home:true,  img:"assets/images/services/hair-care.webp",
+    { id:"haircare",  cat:"haircare",    price:350, duration:45, home:true,  img:"assets/images/services/hair-care.webp",
       nameAr:"عناية متكاملة بالشعر", nameEn:"Complete Hair Care",
-      descAr:"علاج وتغذية متكاملة للشعر.", descEn:"Full hair treatment and nourishment." },
+      descAr:"غسيل لطيف، وماسك ترطيب، وتدليك لفروة الرأس، ثم تصفيف حسب طبيعة الشعر.", descEn:"Gentle wash, conditioning mask, scalp massage and styling tailored to your texture." },
+    { id:"botanical-cut", cat:"haircare", price:550, duration:75, home:false, img:"assets/images/editorial/wash.webp",
+      nameAr:"باقة التنعيم النباتي والقص", nameEn:"Botanical Smooth & Cut",
+      descAr:"قص حسب شكل الوجه، ثم ماسك بزيوت نباتية وتصفيف بالفرشاة لفرد مؤقت بلمسة ناعمة.", descEn:"A tailored cut, a botanical oil mask and a smoothing brush finish for a temporary straightened look." },
     { id:"kids",      cat:"hair",    price:120, duration:30, home:true,  img:"assets/images/services/kids.webp",
       nameAr:"حلاقة الأطفال", nameEn:"Kids Haircut",
       descAr:"حلاقة مريحة وآمنة للأطفال.", descEn:"A comfortable, safe haircut for kids." },
@@ -127,6 +130,8 @@ const CONFIG = {
 
   /* ---------- أسئلة شائعة ---------- */
   faq: [
+    { qAr:"الدفع إزاي؟", aAr:"كاش عند الحضور أو فودافون كاش / إنستا باي.",
+      qEn:"How can I pay?", aEn:"Pay in cash on arrival, by Vodafone Cash or via InstaPay." },
     { qAr:"كيف أحجز زيارة منزلية؟", aAr:"اختر «زيارة منزلية» من نظام الحجز، حدد الخدمات والتاريخ والوقت وأدخل عنوانك، ثم أرسل الطلب عبر واتساب وسيتواصل معك الصالون للتأكيد.",
       qEn:"How do I book a home visit?", aEn:"Choose 'Home Visit' in the booking system, pick services, date and time, enter your address, then send the request via WhatsApp." },
     { qAr:"هل الحلاق يحضر جميع الأدوات؟", aAr:"نعم، يصل الحلاق بكامل أدواته الاحترافية المعقمة، ولا يحتاج منك سوى مكان مناسب للجلوس.",
