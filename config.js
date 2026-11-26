@@ -85,18 +85,21 @@ const CONFIG = {
 
   /* ---------- أحدث القصات ---------- */
   haircuts: [
+    { id:"textured",   slug:"textured-crop",nameEn:"Textured Crop",      nameAr:"قصة بملمس",              descAr:"حجم وملمس طبيعي لشعرك.", descEn:"Natural volume and movement." },
+    { id:"taperfade",  slug:"taper-fade",   nameEn:"Taper Fade",          nameAr:"تدريج تيبِر",            descAr:"تدريج ناعم عند خط الشعر والرقبة.", descEn:"A soft fade at the hairline and neck." },
+    { id:"mullet",     slug:"modern-mullet",nameEn:"Modern Mullet",      nameAr:"موليت عصري",             descAr:"جرأة عصرية بطول خفيف في الخلف.", descEn:"A modern twist with length at the back." },
+    { id:"burstfade", slug:"burst-fade", nameEn:"Burst Fade", nameAr:"بيرست فيد", descAr:"تدريج دائري حول الأذن مع طول طبيعي في الأعلى والخلف.", descEn:"A curved fade around the ear with natural length on top and at the back." },
+    { id:"curtainfringe", slug:"curtain-fringe", nameEn:"Curtain Fringe", nameAr:"كيرتن فرينج", descAr:"فرق وسطي وخصلات أمامية متدفقة لإطلالة عصرية ناعمة.", descEn:"A center part with flowing fringe for a modern, effortless look." },
+    { id:"modernquiff", slug:"modern-quiff", nameEn:"Modern Quiff", nameAr:"كويف عصري", descAr:"حجم طبيعي وملمس مرن في المقدمة مع جوانب مرتبة.", descEn:"Natural volume and flexible texture at the front with neatly cut sides." },
+    { id:"frenchcrop", slug:"french-crop",  nameEn:"French Crop",        nameAr:"قصة فرنسية",             descAr:"قصة قصيرة عصرية مع خصلات أمامية.", descEn:"A short modern cut with textured fringe." },
+    { id:"curlyfade",  slug:"curly-fade",   nameEn:"Curly Fade",         nameAr:"تدريج للشعر الكيرلي",    descAr:"تدريج يبرز جمال الشعر المجعد.", descEn:"A fade that highlights natural curls." },
     { id:"lowfade",    slug:"low-fade",     nameEn:"Low Fade",            nameAr:"تدريج منخفض",           descAr:"تدريج يبدأ أسفل الاذن لإطلالة هادئة وأنيقة.", descEn:"Fade starting below the ear for a clean subtle look." },
     { id:"midfade",    slug:"mid-fade",     nameEn:"Mid Fade",            nameAr:"تدريج متوسط",            descAr:"توازن مثالي بين الجرأة والأناقة.", descEn:"The perfect balance of bold and clean." },
     { id:"highfade",   slug:"high-fade",    nameEn:"High Fade",           nameAr:"تدريج عالٍ",             descAr:"تدريج واضح يمنحك إطلالة عصرية جريئة.", descEn:"A sharp high-contrast modern look." },
     { id:"skinfade",   slug:"skin-fade",    nameEn:"Skin Fade",           nameAr:"تدريج للجلد",            descAr:"انتقال سلس من الشعر للجلد بحدّة مثالية.", descEn:"A smooth transition down to the skin." },
-    { id:"taperfade",  slug:"taper-fade",   nameEn:"Taper Fade",          nameAr:"تدريج تيبِر",            descAr:"تدريج ناعم عند خط الشعر والرقبة.", descEn:"A soft fade at the hairline and neck." },
-    { id:"frenchcrop", slug:"french-crop",  nameEn:"French Crop",        nameAr:"قصة فرنسية",             descAr:"قصة قصيرة عصرية مع خصلات أمامية.", descEn:"A short modern cut with textured fringe." },
-    { id:"textured",   slug:"textured-crop",nameEn:"Textured Crop",      nameAr:"قصة بملمس",              descAr:"حجم وملمس طبيعي لشعرك.", descEn:"Natural volume and movement." },
     { id:"buzz",       slug:"buzz-cut",     nameEn:"Buzz Cut",            nameAr:"قصة عسكرية",             descAr:"قصة قصيرة عملية وواثقة.", descEn:"A practical, confident short cut." },
     { id:"slickback",  slug:"slick-back",   nameEn:"Slick Back",          nameAr:"شعر ممشط للخلف",          descAr:"إطلالة كلاسيكية فاخرة ممشطة للخلف.", descEn:"A classic luxurious swept-back style." },
-    { id:"mullet",     slug:"modern-mullet",nameEn:"Modern Mullet",      nameAr:"موليت عصري",             descAr:"جرأة عصرية بطول خفيف في الخلف.", descEn:"A modern twist with length at the back." },
     { id:"sidepart",   slug:"side-part",    nameEn:"Side Part",          nameAr:"فرق جانبي",              descAr:"فرق جانبي أنيق يناسب المناسبات والعمل.", descEn:"A neat side part for work and occasions." },
-    { id:"curlyfade",  slug:"curly-fade",   nameEn:"Curly Fade",         nameAr:"تدريج للشعر الكيرلي",    descAr:"تدريج يبرز جمال الشعر المجعد.", descEn:"A fade that highlights natural curls." },
     { id:"pompadour",  slug:"pompadour",    nameEn:"Pompadour",           nameAr:"بومبادور",               descAr:"حجم فاخر في المقدمة بروح السبعينات.", descEn:"Full-volume front with a retro soul." },
     { id:"gentleman",  slug:"gentleman-cut",nameEn:"Classic Gentleman",   nameAr:"قصة الجنتلمان",          descAr:"القصة الكلاسيكية التي لا تفقد بريقها.", descEn:"The timeless classic that never fades." }
   ],
