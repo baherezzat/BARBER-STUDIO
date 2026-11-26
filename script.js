@@ -7,7 +7,7 @@
 /* ---------------- I18N ---------------- */
 const I18N = {
   ar: {
-    dir: "rtl", pickService:"اختار الخدمة والموعد",
+    dir: "rtl", bookSalon:"احجز داخل الصالون", bookHome:"احجز زيارة منزلية", bookGroom:"احجز تجهيز العريس",
     brandName: "ذا جنتلمان", brandSub: "BARBER STUDIO",
     navHome:"الرئيسية", navServices:"خدماتنا", navHaircuts:"أحدث القصات",
     navHomeService:"الزيارات المنزلية", navGroom:"باقات العريس",
@@ -77,7 +77,7 @@ const I18N = {
     perPerson:"للشخص الواحد", egp:"ج.م"
   },
   en: {
-    dir: "ltr", pickService:"Choose service & time",
+    dir: "ltr", bookSalon:"Book at the salon", bookHome:"Book a home visit", bookGroom:"Book groom prep",
     brandName: "THE GENTLEMAN", brandSub: "BARBER STUDIO",
     navHome:"Home", navServices:"Services", navHaircuts:"Trending Cuts",
     navHomeService:"Home Visits", navGroom:"Groom Packages",
@@ -656,15 +656,6 @@ function showBookingPhoto(mode) {
 document.addEventListener("click", (e) => {
   const q = (sel) => e.target.closest(sel);
 
-  const mode = q("[data-mode-choice]");
-  if (mode) {
-    const entry = mode.closest(".booking-entry");
-    entry.dataset.mode = mode.dataset.modeChoice;
-    showBookingPhoto(entry.dataset.mode);
-    entry.querySelector(".session-book").dataset.bookingType = entry.dataset.mode;
-    entry.querySelectorAll("[data-mode-choice]").forEach(b => b.setAttribute("aria-pressed", String(b === mode)));
-    return;
-  }
   if (q("[data-nav]")) {
     revealPanel(q("[data-nav]").hash);
     document.getElementById("navDrawer").classList.remove("open");
@@ -674,6 +665,11 @@ document.addEventListener("click", (e) => {
   }
   if (q("[data-open-booking]")) {
     const btn = q("[data-open-booking]");
+    const entry = btn.closest(".booking-entry");
+    if (entry && btn.dataset.bookingType) {
+      entry.dataset.mode = btn.dataset.bookingType;
+      showBookingPhoto(entry.dataset.mode);
+    }
     if (btn.dataset.bookingType && Booking.type !== btn.dataset.bookingType) resetBooking();
     openBooking({ type: btn.dataset.bookingType || null, step: btn.dataset.bookingType ? 2 : 1 });
     return;
