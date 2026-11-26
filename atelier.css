@@ -92,3 +92,18 @@ html[dir="rtl"] .session-copy{direction:rtl}
 .bk-foot [data-bk-next],.bk-foot [data-bk-send]{min-height:48px;min-width:45%;background:#f0d5a8;color:#271b14;font-weight:800}
 @media(max-width:768px){.modal-panel{height:100dvh;max-height:100dvh}.bk-foot{padding-inline:1rem}}
 @media(max-height:450px){.modal-head,.bk-steps,.bk-foot{padding-block:.3rem}.modal-panel{height:100dvh;max-height:100dvh}}
+
+.compact-panel > summary {
+  position: relative;
+  justify-content: center;
+  padding-inline: 2.75rem;
+  text-align: center;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1.5;
+}
+.compact-panel > summary::after {
+  position: absolute;
+  inset-inline-end: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
