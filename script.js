@@ -641,6 +641,19 @@ function buildWaMessage() {
 }
 
 /* ================= EVENT DELEGATION ================= */
+// Real barbershop photographs by Redd Francisco, Chaps & Co and Barney Goodman (Unsplash).
+const bookingPhotoIds = {
+  salon: "1702865272115-5afdbae975af",
+  home: "1759134248487-e8baaf31e33e",
+  groom: "1781455793310-8427c96454c7"
+};
+function showBookingPhoto(mode) {
+  const photo = document.getElementById("bookingPhoto");
+  const url = width => `https://images.unsplash.com/photo-${bookingPhotoIds[mode]}?w=${width}&fit=max&q=85&fm=webp`;
+  photo.srcset = [768, 1440, 2400, 3840].map(width => `${url(width)} ${width}w`).join(", ");
+  photo.src = url(1440);
+}
+
 document.addEventListener("click", (e) => {
   const q = (sel) => e.target.closest(sel);
 
@@ -648,6 +661,7 @@ document.addEventListener("click", (e) => {
   if (mode) {
     const entry = mode.closest(".booking-entry");
     entry.dataset.mode = mode.dataset.modeChoice;
+    showBookingPhoto(entry.dataset.mode);
     entry.querySelector(".session-book").dataset.bookingType = entry.dataset.mode;
     entry.querySelectorAll("[data-mode-choice]").forEach(b => b.setAttribute("aria-pressed", String(b === mode)));
     return;

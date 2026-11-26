@@ -58,10 +58,10 @@ html[dir] .hero-overlay{background:linear-gradient(0deg,#170f0df5 0%,#1a100fc9 3
   .haircut-info{padding:.75rem}.haircut-info h3{font-size:.96rem}.haircut-info small{font-size:.82rem}
   .groom-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr 1fr;gap:1rem}
 }
-.booking-entry{display:grid;grid-template-columns:1.12fr 1fr;direction:ltr;background:#261c19;padding-top:var(--header-h)}
-.session-photo{min-height:clamp(30rem,67svh,49rem);background:#30211b url('assets/images/hero/chair-session.webp') center 37%/cover}
-.booking-entry[data-mode="home"] .session-photo{background-image:url('assets/images/editorial/house-call.webp')}
-.booking-entry[data-mode="groom"] .session-photo{background-image:url('assets/images/editorial/groom-portrait.webp')}
+.booking-entry{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(20rem,1fr);direction:ltr;background:#261c19;padding-top:var(--header-h)}
+.session-photo{position:relative;min-height:clamp(29rem,68svh,52rem);background:#29241e;overflow:hidden}
+.session-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% center}
+.booking-entry[data-mode="home"] .session-photo img{object-position:68% center}
 .session-copy{display:flex;flex-direction:column;align-items:start;justify-content:center;padding:clamp(1.5rem,4.5vw,5rem);gap:1.5rem;background:linear-gradient(145deg,#382722,#201817)}
 html[dir="rtl"] .session-copy{direction:rtl}
 .session-brand{font:italic clamp(1.6rem,3vw,3rem) Georgia,serif;color:#e3c7a4}
@@ -74,4 +74,4 @@ html[dir="rtl"] .session-copy{direction:rtl}
 .compact-panel summary{display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-size:1.2rem;font-weight:700;padding:1.15rem 0;list-style:none}
 .compact-panel summary::-webkit-details-marker{display:none}.compact-panel summary::after{content:'+';font:1.6rem Georgia}.compact-panel[open] summary::after{content:'−'}
 .panel-content{padding:.6rem 0 2rem}.site-footer{padding:1.3rem 0}.footer-brand,.footer-social:empty{display:none}
-@media(max-width:740px){.booking-entry{grid-template-columns:1fr}.session-photo{min-height:0;height:clamp(13rem,34svh,23rem);background-position:center 35%}.session-copy{gap:.8rem;padding:1.35rem 5vw 1.65rem}.session-copy h1{font-size:2.1rem}.session-brand{font-size:1.55rem}.session-book{width:100%}.session-modes button{padding:.45rem .74rem}.compact-menu{padding-top:.65rem}}
+@media(max-width:740px){.booking-entry{grid-template-columns:1fr}.session-photo{min-height:0;height:auto;aspect-ratio:1.6}.session-copy{gap:.8rem;padding:1.35rem 5vw 1.65rem}.session-copy h1{font-size:2.1rem}.session-brand{font-size:1.55rem}.session-book{width:100%}.session-modes button{padding:.45rem .74rem}.compact-menu{padding-top:.65rem}}
