@@ -146,7 +146,7 @@ html[dir="rtl"] .session-copy{direction:rtl}
 }
 
 .booking-scene{margin:-.65rem -1.5rem .75rem;color:var(--gold);text-align:center}
-.booking-scene img{display:block;width:55%;margin-inline:auto;height:auto;aspect-ratio:2.6;object-fit:cover;object-position:center 38%}
+.booking-scene img{display:block;width:100%;margin-inline:auto;height:clamp(7rem,22vw,11rem);object-fit:cover;object-position:center 38%}
 .booking-scene strong{display:block;padding:.8rem 1.5rem 0;font-size:1.1rem}
 @media(prefers-reduced-motion:no-preference){
   .booking-scene img{animation:booking-scene-in .32s ease-out}
