@@ -668,16 +668,20 @@ async function showBookingPhoto(mode) {
   const request = ++sceneRequest;
   if (entry.dataset.mode === mode) return;
   const current = document.getElementById("bookingPhoto");
-  const next = current.cloneNode(false);
+  const frame = current.closest("picture");
+  const nextFrame = frame.cloneNode(true);
+  const next = nextFrame.querySelector("img");
   const url = width => `assets/images/hero/${bookingScenes[mode]}-${width}.webp`;
-  next.srcset = [960, 3840].map(width => `${url(width)} ${width}w`).join(", ");
-  next.src = url(960);
+  nextFrame.querySelector("source").srcset = [960, 3840].map(width => `${url(width)} ${width}w`).join(", ");
+  const tallUrl = width => `assets/images/hero/tall/${bookingScenes[mode]}-${width}.webp`;
+  next.srcset = [960, 3840].map(width => `${tallUrl(width)} ${width}w`).join(", ");
+  next.src = tallUrl(960);
   try { await next.decode(); } catch { return; }
   if (request !== sceneRequest) return;
   entry.dataset.mode = mode;
   current.removeAttribute("id");
-  current.after(next);
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) { current.remove(); return; }
+  frame.after(nextFrame);
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) { frame.remove(); return; }
   const timing = {duration:760, easing:"cubic-bezier(.32,0,.18,1)"};
   current.animate([
     {filter:"brightness(1)"}, {filter:"brightness(.48)", offset:.5}, {filter:"brightness(.6)"}
@@ -689,13 +693,13 @@ async function showBookingPhoto(mode) {
   ], timing);
   const shade = document.createElement("span");
   shade.className = "scene-shadow";
-  current.parentElement.append(shade);
+  frame.parentElement.append(shade);
   shade.animate([
     {opacity:0, transform:"translateX(-65%)"},
     {opacity:.65, offset:.42},
     {opacity:0, transform:"translateX(65%)"}
   ], timing).finished.then(() => shade.remove());
-  animation.finished.then(() => current.remove());
+  animation.finished.then(() => frame.remove());
 }
 
 for (const button of document.querySelectorAll(".session-modes button")) {
