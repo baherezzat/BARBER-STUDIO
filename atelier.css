@@ -177,14 +177,34 @@ html[dir="rtl"] .session-copy{direction:rtl}
 
 /* Give the full photograph its own naturally proportioned space. */
 .booking-entry {
-  --photo-size: min(calc(100dvh - var(--header-h)), 64vw, calc(100vw - 20rem));
+  --photo-size: min(calc(100dvh - var(--header-h)), 56vw, calc(100vw - 20rem));
   grid-template-columns: var(--photo-size) minmax(0, 1fr);
   grid-template-rows: auto;
 }
 .booking-entry .session-photo { aspect-ratio: 1; align-self: center; }
 @media (max-width: 740px) and (orientation: portrait), (min-width: 741px) and (max-width: 950px) and (orientation: portrait) {
-  .booking-entry { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
-  .booking-entry .session-copy { padding: 1rem 5vw; gap: .55rem; }
+  .booking-entry { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(min-content, 1fr) auto; }
+  .booking-entry .session-copy {
+    grid-row: 1;
+    align-items: center;
+    gap: .65rem;
+    padding: 1rem 4vw;
+  }
+  .booking-entry .session-brand { display: none; }
+  .booking-entry .session-copy h1 { font-size: clamp(2rem, 6vw, 3rem); }
+  .booking-entry .session-modes {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: .4rem;
+  }
+  .booking-entry .session-modes button {
+    min-width: 0;
+    min-height: 48px;
+    padding: .5rem .25rem;
+    font-size: clamp(1rem, 4.1vw, 1.35rem);
+    text-wrap: balance;
+  }
+  .booking-entry .session-photo { align-self: start; }
 }
 @media (max-width: 740px) and (max-height: 750px) and (orientation: portrait), (min-width: 741px) and (max-width: 950px) and (orientation: portrait) {
   .booking-entry .session-photo { aspect-ratio: 16 / 9; }
@@ -192,3 +212,5 @@ html[dir="rtl"] .session-copy{direction:rtl}
 @media (max-height: 500px) and (orientation: landscape) and (max-width: 768px) {
   .booking-entry { --photo-size: min(calc(100dvh - var(--header-h) - 60px), 50vw); }
 }
+
+.booking-entry .session-copy { align-items: center; text-align: center; min-width: 0; }
