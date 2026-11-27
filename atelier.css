@@ -65,17 +65,21 @@ html[dir] .hero-overlay{background:linear-gradient(0deg,#170f0df5 0%,#1a100fc9 3
 .session-copy{display:flex;flex-direction:column;align-items:start;justify-content:center;padding:clamp(1.5rem,4.5vw,5rem);gap:1.5rem;background:linear-gradient(145deg,#382722,#201817)}
 html[dir="rtl"] .session-copy{direction:rtl}
 .session-brand{font:italic clamp(1.6rem,3vw,3rem) Georgia,serif;color:#e3c7a4}
-.session-copy h1{font-size:clamp(2.8rem,5vw,5rem);line-height:1.16}
+.session-copy h1{font-size:clamp(3.1rem,5.5vw,5.5rem);line-height:1.16}
 .session-modes{display:grid;gap:.55rem;width:min(100%,21rem)}
-.session-modes button{min-height:46px;white-space:normal}
+.session-modes button{min-height:52px;font-size:clamp(1.2rem,1.65vw,1.55rem);line-height:1.35;font-weight:700;white-space:normal}
 .compact-menu.container{width:100%;padding:0}
 .compact-panel{scroll-margin-top:calc(var(--header-h) + .5rem);border-bottom:1px solid #92755c;padding:0 clamp(1.5rem,4.5vw,5rem)}
 .compact-panel summary{display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-size:1.2rem;font-weight:700;padding:1.15rem 0;list-style:none}
 .compact-panel summary::-webkit-details-marker{display:none}.compact-panel summary::after{content:'+';font:1.6rem Georgia}.compact-panel[open]>summary::after{content:'−'}
 .panel-content{padding:.6rem 0 2rem}.site-footer{padding:1.3rem 0}.footer-brand,.footer-social:empty{display:none}
-@media(max-width:740px){.booking-entry{grid-template-columns:1fr}.session-photo{min-height:0;height:auto;aspect-ratio:1.6}.session-copy{gap:.8rem;padding:1.35rem 5vw 1.65rem}.session-copy h1{font-size:2.1rem}.session-brand{font-size:1.55rem}.session-modes{width:100%}.session-modes button{padding:.45rem .74rem}.compact-panel{padding-inline:5vw}}
-/* Keep each booking image edge-to-edge within a landscape frame. */
-.booking-entry .session-photo img{object-fit:cover;object-position:center}
+@media(max-width:740px){.booking-entry{grid-template-columns:1fr}.session-photo{min-height:0;height:auto;aspect-ratio:1.6}.session-copy{gap:.8rem;padding:1.35rem 5vw 1.65rem}.session-copy h1{font-size:clamp(2.35rem,8vw,3rem)}.session-brand{font-size:1.55rem}.session-modes{width:100%}.session-modes button{padding:.45rem .74rem}.compact-panel{padding-inline:5vw}}
+/* Keep the entire photograph visible even during the scene transition. */
+.booking-entry .session-photo img{object-fit:contain;object-position:center;transform:none!important}
+@media(min-width:741px){
+  .booking-entry{background:linear-gradient(145deg,#382722,#201817)}
+  .booking-entry .session-copy,.booking-entry .session-photo{background:transparent}
+}
 .booking-entry{min-height:100vh;min-height:100dvh}
 .booking-entry .session-photo{min-height:0;aspect-ratio:auto}
 @media(max-width:768px){
@@ -88,9 +92,9 @@ html[dir="rtl"] .session-copy{direction:rtl}
   .booking-entry{grid-template-columns:minmax(0,1fr) minmax(16rem,1fr);grid-template-rows:auto}
   .session-copy{padding:.5rem 4vw;gap:.3rem}
   .session-brand{font-size:1.15rem}
-  .session-copy h1{font-size:1.65rem}
+  .session-copy h1{font-size:1.9rem}
   .session-modes{gap:.25rem}
-  .session-modes button{min-height:36px;padding:.24rem .65rem}
+  .session-modes button{min-height:38px;font-size:1.12rem;padding:.24rem .65rem}
 }
 @media(min-width:741px){.session-copy{padding-block:clamp(1.4rem,3vw,4rem);gap:clamp(.75rem,1.5vw,1.5rem)}}
 #booking-faq{background:#efe6d9;color:#342720}
