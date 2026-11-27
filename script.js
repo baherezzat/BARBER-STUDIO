@@ -444,7 +444,7 @@ function renderBooking() {
   if (Booking.step === 2) {
     let html = `<p style="font-size:.9rem;color:var(--gray);margin-bottom:.8rem">${t("chooseServices")}</p>`;
     const scene = bookingScenes[Booking.type];
-    if (scene) html = `<div class="booking-scene"><img alt="" width="960" height="540" sizes="(max-width: 768px) 100vw, 680px" srcset="assets/images/hero/${scene}-960.webp 960w, assets/images/hero/${scene}-3840.webp 3840w" src="assets/images/hero/${scene}-960.webp"><strong>${esc(t({salon:"typeSalon",home:"typeHome",groom:"typeGroom"}[Booking.type]))}</strong></div>` + html;
+    if (scene) html = `<div class="booking-scene"><img alt="" width="960" height="405" sizes="(max-width: 768px) 100vw, 680px" srcset="assets/images/booking/${scene}-960.webp 960w, assets/images/booking/${scene}-3840.webp 3840w" src="assets/images/booking/${scene}-960.webp"><strong>${esc(t({salon:"typeSalon",home:"typeHome",groom:"typeGroom"}[Booking.type]))}</strong></div>` + html;
     if (Booking.type === "groom") {
       html += CONFIG.groomPackages.map(p => {
         const name = LANG==="ar" ? p.nameAr : p.nameEn;
