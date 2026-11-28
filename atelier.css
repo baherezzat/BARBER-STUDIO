@@ -240,20 +240,30 @@ html[dir="rtl"] .session-modes button::after { transform: rotate(-45deg); }
   .booking-entry .session-modes button { min-height: 44px; padding: .35rem .85rem; font-size: 1.0625rem; }
 }
 @media (min-width: 769px) and (orientation: landscape) {
-  .booking-entry {
-    max-height: 100dvh;
-    grid-template-rows: minmax(0, 1fr) auto;
-  }
   .booking-entry .session-photo {
-    width: 100%;
-    height: 100%;
-    max-height: 42.1875vw;
-    aspect-ratio: 64 / 27;
+    height: min(42.1875vw, 63svh, calc(100svh - var(--header-h) - 9rem));
+    aspect-ratio: auto;
+    container-type: size;
   }
-  .booking-entry[data-mode] .session-photo img {
-    object-fit: contain;
-    object-position: center bottom;
+  .booking-entry .session-photo picture { position: absolute; inset: 0; }
+  .session-photo picture::before,
+  .session-photo picture::after {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    width: max(0px, calc((100cqw - 100cqh * 64 / 27) / 2 + .5px));
+    background: var(--scene-edge) no-repeat;
+    background-size: max(237.037cqh, 950%) 100%;
+    transform: scaleX(-1);
   }
-  .booking-entry .session-modes { width: min(100%, 64rem); }
-  .booking-entry .session-modes button { min-height: 50px; }
+  .session-photo picture::before { left: 0; background-position: left center; }
+  .session-photo picture::after { right: 0; background-position: right center; }
+  .session-photo picture { --scene-edge: url("assets/images/booking/salon-atelier-3840.webp"); }
+  .session-photo picture[data-scene="home"] { --scene-edge: url("assets/images/booking/home-haircut-3840.webp"); }
+  .session-photo picture[data-scene="groom"] { --scene-edge: url("assets/images/booking/wedding-prep-3840.webp"); }
+  .booking-entry[data-mode] .session-photo img { object-fit: contain; object-position: center; }
+  .booking-entry .session-copy { padding-top: .25rem; gap: .3rem; }
+  .booking-entry .session-copy h1 { font-size: clamp(2rem, 3.3vw, 3rem); }
+  .booking-entry .session-modes { width: min(100%, 66rem); }
+  .booking-entry .session-modes button { min-height: 50px; font-size: clamp(1.15rem, 1.7vw, 1.5rem); }
 }

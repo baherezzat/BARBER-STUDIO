@@ -670,6 +670,7 @@ async function showBookingPhoto(mode) {
   const current = document.getElementById("bookingPhoto");
   const frame = current.closest("picture");
   const nextFrame = frame.cloneNode(true);
+  nextFrame.dataset.scene = mode;
   const next = nextFrame.querySelector("img");
   const url = width => `assets/images/booking/${bookingScenes[mode]}-${width}.webp`;
   nextFrame.querySelector("source").srcset = [960, 3840].map(width => `${url(width)} ${width}w`).join(", ");
@@ -684,7 +685,7 @@ async function showBookingPhoto(mode) {
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) { frame.remove(); return; }
   const timing = {duration:760, easing:"cubic-bezier(.32,0,.18,1)"};
   if (matchMedia("(min-width: 769px)").matches) {
-    next.animate([{opacity: 0}, {opacity: 1}], timing).finished.then(() => frame.remove());
+    nextFrame.animate([{opacity: 0}, {opacity: 1}], timing).finished.then(() => frame.remove());
     return;
   }
   current.animate([
