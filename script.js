@@ -683,6 +683,10 @@ async function showBookingPhoto(mode) {
   frame.after(nextFrame);
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) { frame.remove(); return; }
   const timing = {duration:760, easing:"cubic-bezier(.32,0,.18,1)"};
+  if (matchMedia("(min-width: 769px)").matches) {
+    next.animate([{opacity: 0}, {opacity: 1}], timing).finished.then(() => frame.remove());
+    return;
+  }
   current.animate([
     {filter:"brightness(1)"}, {filter:"brightness(.48)", offset:.5}, {filter:"brightness(.6)"}
   ], timing);
