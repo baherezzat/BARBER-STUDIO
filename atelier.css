@@ -235,3 +235,24 @@ html[dir="rtl"] .session-modes button::after { transform: rotate(-45deg); }
   .booking-entry .session-copy { padding-block: 0 .35rem; gap: .2rem; }
   .booking-entry .session-copy h1 { font-size: 1.45rem; }
 }
+@media (min-width: 769px) and (orientation: landscape) {
+  .booking-entry .session-photo {
+    height: min(39vw, 59svh, max(0px, calc(100svh - var(--header-h) - 10rem)));
+    aspect-ratio: auto;
+    isolation: isolate;
+  }
+  .booking-entry .session-photo::before {
+    content: "";
+    position: absolute;
+    inset: -15px;
+    z-index: -1;
+    background: center / cover url("assets/images/booking/salon-atelier-960.webp");
+    filter: blur(12px) brightness(.68);
+  }
+  .booking-entry[data-mode="home"] .session-photo::before {
+    background-image: url("assets/images/booking/home-haircut-960.webp");
+  }
+  .booking-entry[data-mode="groom"] .session-photo::before {
+    background-image: url("assets/images/booking/wedding-prep-960.webp");
+  }
+}
