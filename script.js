@@ -671,11 +671,11 @@ async function showBookingPhoto(mode) {
   const frame = current.closest("picture");
   const nextFrame = frame.cloneNode(true);
   const next = nextFrame.querySelector("img");
-  const url = width => `assets/images/hero/${bookingScenes[mode]}-${width}.webp`;
+  const url = width => `assets/images/booking/${bookingScenes[mode]}-${width}.webp`;
   nextFrame.querySelector("source").srcset = [960, 3840].map(width => `${url(width)} ${width}w`).join(", ");
-  const tallUrl = width => `assets/images/hero/tall/${bookingScenes[mode]}-${width}.webp`;
-  next.srcset = [960, 3840].map(width => `${tallUrl(width)} ${width}w`).join(", ");
-  next.src = tallUrl(960);
+  const mobileUrl = width => `assets/images/hero/${bookingScenes[mode]}-${width}.webp`;
+  next.srcset = [960, 3840].map(width => `${mobileUrl(width)} ${width}w`).join(", ");
+  next.src = mobileUrl(960);
   try { await next.decode(); } catch { return; }
   if (request !== sceneRequest) return;
   entry.dataset.mode = mode;
