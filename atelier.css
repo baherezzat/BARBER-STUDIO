@@ -237,7 +237,7 @@ html[dir="rtl"] .session-modes button::after { transform: rotate(-45deg); }
 }
 @media (max-width: 740px) {
   .booking-entry .session-modes { width: 90%; }
-  .booking-entry .session-modes button { min-height: 44px; padding: .35rem .85rem; }
+  .booking-entry .session-modes button { min-height: 44px; padding: .35rem .85rem; font-size: 1.0625rem; }
 }
 @media (min-width: 769px) and (orientation: landscape) {
   .booking-entry .session-photo {
