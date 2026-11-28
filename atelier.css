@@ -240,9 +240,14 @@ html[dir="rtl"] .session-modes button::after { transform: rotate(-45deg); }
   .booking-entry .session-modes button { min-height: 44px; padding: .35rem .85rem; font-size: 1.0625rem; }
 }
 @media (min-width: 769px) and (orientation: landscape) {
-  .booking-entry .session-photo {
-    --photo-height: min(39vw, 59svh, max(0px, calc(100svh - var(--header-h) - 10rem)));
-    width: min(100%, calc(var(--photo-height) * 64 / 27));
-    justify-self: center;
+  .booking-entry {
+    height: 100dvh;
+    grid-template-rows: minmax(0, 1fr) auto;
   }
+  .booking-entry .session-photo {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+  .booking-entry .session-photo img { object-position: center bottom; }
 }
